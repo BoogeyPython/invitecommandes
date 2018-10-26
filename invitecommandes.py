@@ -49,10 +49,9 @@ for x in range(4):
 interface_message(" Votre miniterminal ")
 
 
-#################### LA PARTIE EN DESSOUS L'EXECUTION DES PROGRAMMES ####################
+#################### LA PARTIE EN DESSOUS L'EXECUTION DU PROGRAMMES ####################
 
 #liste des variables 
-terminal = True
 
 terminal_name = "[CMD]"
 print("Type help for all commands")
@@ -61,18 +60,19 @@ user_commande = ""
 compteur = 0
 
 
-while terminal:
+while True:
     
 	user_commande = input(f"{terminal_name}")
     
 	if user_commande == "quit":
-	    terminal_name = input("Voulez vous quitter le programme [o/n]") 
+	    terminal_name = input("Voulez vous quitter le programme [o/n]:")
 	    if terminal_name == "o":
+	    	print("Bravo vous avez quitté le programme.")
 	    	break
 	    	if terminal_name == "n":
 	    		continue
-	    
-	    		print("Bravo vous avez quitté le programme")
+	        
+	   
 	
 	     #On demande à python de se fermer
 
@@ -80,18 +80,26 @@ while terminal:
 		 os.system(shutdown)
 	          
 			
-	elif user_commande == "name":
+	elif user_commande == "nom":
 
 	     terminal_name = input("Change name==>")
 	     print("Le nom vient d'être:)\
 	     	changer par user")
 
+	elif user_commande == "ipconfig":
+	     os.system("ipconfig")
+
+	elif user_commande == "systeminfo":
+	     os.system("systeminfo")         
+
 	elif user_commande == "help":
 	
 	     print("\
 ----++++++++++++++++++++++++++++------\n\
-name: modifier le nom du terminal\n\
-help: afficher la liste des commandes\n\
-quit: terminer l'éxecution du programme...\n\
-shutdown: arrêter le système :(\n\
----------------------------------------------") 
+nom: Modifier le nom du terminal\n\
+help: Afficher la liste des commandes\n\
+quit: Terminer l'éxecution du programme...\n\
+shutdown: Arrêter le système :(\n\
+ipconfig: Configuration IP de Windows\n\
+systeminfo: Propriété du système\n\
+--------------------------------------------") 
