@@ -49,7 +49,7 @@ for x in range(4):
 interface_message(" Votre miniterminal ")
 
 
-#################### LA PARTIE EN DESSOUS C'EST A TOI DE LA CORRIGER OUMAKI ####################
+#################### LA PARTIE EN DESSOUS L'EXECUTION DES PROGRAMMES ####################
 
 #liste des variables 
 terminal = True
