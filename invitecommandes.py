@@ -53,28 +53,25 @@ interface_message(" Votre miniterminal ")
 
 #liste des variables 
 
-terminal_name = "[CMD]"
+terminal_name = ""
 print("Type help for all commands")
-
 user_commande = ""
 compteur = 0
-
+CMD = "CMD"
+shutdown = "shutdown
 
 while True:
-    
-	user_commande = input(f"{terminal_name}")
+	user_commande = input(f"[{CMD}]>")
     
 	if user_commande == "quit":
-	    terminal_name = input("Voulez vous quitter le programme [o/n]:")
+	    terminal_name = input("Voulez vous quitter le programme [o/n]:") 
 	    if terminal_name == "o":
-	    	print("Bravo vous avez quitté le programme.")
+	    	print("Bravo vous avez quitté le programme")
 	    	break
 	    	if terminal_name == "n":
-	    		continue
-	        
-	   
-	
-	     #On demande à python de se fermer
+	    	    user_commande = input(f"{[CMD]}")
+	    	    continue
+	        #On demande à python de se fermer
 
 	elif user_commande == "shutdown":
 		 os.system(shutdown)
@@ -90,7 +87,10 @@ while True:
 	     os.system("ipconfig")
 
 	elif user_commande == "systeminfo":
-	     os.system("systeminfo")         
+	     os.system("systeminfo")
+
+	elif user_commande == "cls":
+	     os.system("cls")              
 
 	elif user_commande == "help":
 	
@@ -102,4 +102,5 @@ quit: Terminer l'éxecution du programme...\n\
 shutdown: Arrêter le système :(\n\
 ipconfig: Configuration IP de Windows\n\
 systeminfo: Propriété du système\n\
+cls       : Nettoyer le terminal\n\
 --------------------------------------------") 
