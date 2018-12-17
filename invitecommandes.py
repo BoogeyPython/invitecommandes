@@ -3,25 +3,8 @@
 import time
 import os
 
-print(r"""                     
-             ,----------------,              ,---------,
-        ,-----------------------,          ,"        ,"|
-      ,"                      ,"|        ,"        ,"  |
-     +-----------------------+  |      ,"        ,"    |
-     |  .-----------------.  |  |     +---------+      |
-     |  |                 |  |  |     | -==----'|      |
-     |  |  miniterminal   |  |  |     |         |      |
-     |  |  by oumaki      |  |  |/----|`---=    |      |
-     |  |  C:\>_          |  |  |   ,/|==== ooo |      ;
-     |  |                 |  |  |  // |(((( [33]|    ,"
-     |  `-----------------'  |," .;'| |((((     |  ,"
-     +-----------------------+  ;;  | |         |,"
-        /_)______________(_/  //'   | +---------+
-   ___________________________/___  `,
-  /  oooooooooooooooo  .o.  oooo /,   \,"-----------
- / ==ooooooooooooooo==.o.  ooo= //   ,`\--{)B     ,"
-/_==__==========__==_ooo__ooo=_/'   /___________,"              
-""")
+
+########################### AUTHENTIFCATION DU PROGRAMME ########################################
 
 
 def interface_message(msg):
@@ -49,7 +32,7 @@ for x in range(4):
 interface_message(" Votre miniterminal ")
 
 
-#################### LA PARTIE EN DESSOUS L'EXECUTION DU PROGRAMMES ####################
+#################### LA PARTIE EN DESSOUS L'EXECUTION DU PROGRAMME ####################
 
 #liste des variables 
 
@@ -58,8 +41,7 @@ print("Type help for all commands")
 user_commande = ""
 compteur = 0
 CMD = "CMD"
-shutdown = "shutdown
-
+shutdown = "shutdown -s"
 while True:
 	user_commande = input(f"[{CMD}]>")
     
@@ -73,15 +55,16 @@ while True:
 	    	    continue
 	        #On demande à python de se fermer
 
-	elif user_commande == "shutdown":
+	elif user_commande == "shutdown -s":
 		 os.system(shutdown)
 	          
 			
 	elif user_commande == "nom":
 
-	     terminal_name = input("Change name==>")
-	     print("Le nom vient d'être:)\
-	     	changer par user")
+	     terminal_name = input("Change name==>") 
+	     print("Le nom vient d'être changé par user")
+	     user_commande = input(f"[{terminal_name}]>")
+	    
 
 	elif user_commande == "ipconfig":
 	     os.system("ipconfig")
@@ -90,7 +73,11 @@ while True:
 	     os.system("systeminfo")
 
 	elif user_commande == "cls":
-	     os.system("cls")              
+	     os.system("cls")
+	elif user_commande == "shutdown -r":
+	     os.system("shutdown -r")
+	elif user_commande == "color a":
+	     os.system("color a")                        
 
 	elif user_commande == "help":
 	
@@ -99,8 +86,10 @@ while True:
 nom: Modifier le nom du terminal\n\
 help: Afficher la liste des commandes\n\
 quit: Terminer l'éxecution du programme...\n\
-shutdown: Arrêter le système :(\n\
+shutdown -s: Arrêter le système :(\n\
 ipconfig: Configuration IP de Windows\n\
 systeminfo: Propriété du système\n\
 cls       : Nettoyer le terminal\n\
+shutdown -r: Rédemarrer le système\n\
+color a : changer de couleur\n\
 --------------------------------------------") 
