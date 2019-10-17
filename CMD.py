@@ -12,6 +12,10 @@ def interface_message(msg):
 
 interface_message(" Interface d'authentification ")
 
+print("username par defaut : msfconsole\n\
+mot de passe par dafaut : msfconsole")
+
+
 hidden_username = "msfconsole"
 hidden_password = "msfconsole"
 
@@ -22,10 +26,10 @@ while True:
     if username != hidden_username or password != hidden_password:
         print("L'authentification a échoué, veuillez réessayer !\n")
     else:
-        print("l'authentification a réussi, \nBienvenue {} !\n".format(username))
+        print("l'authentification a réussi, \nBienvenue sur {} !\n".format(username))
         break
 
-for x in range(4):
+for i in range(4):
 	print("Veuillez patienter...")
 	time.sleep(0.5)
 
@@ -36,17 +40,17 @@ interface_message(" Votre miniterminal ")
 
 #liste des variables 
 
-terminal_name = ""
+terminal_name = 0
 print("Type help for all commands")
 user_commande = ""
-compteur = 0
+compteur = 0  
 CMD = "CMD"
 shutdown = "shutdown -s"
 while True:
 	user_commande = input(f"[{CMD}]>")
     
 	if user_commande == "quit":
-	    terminal_name = input("Voulez vous quitter le programme [o/n]:") 
+	    terminal_name = input("Voulez vous quitter le programme ? [o/n]:") 
 	    if terminal_name == "o":
 	    	print("Bravo vous avez quitté le programme")
 	    	break
@@ -57,15 +61,7 @@ while True:
 
 	elif user_commande == "shutdown -s":
 		 os.system(shutdown)
-	          
-			
-	elif user_commande == "nom":
-
-	     terminal_name = input("Change name==>") 
-	     print("Le nom vient d'être changé par user")
-	     user_commande = input(f"[{terminal_name}]>")
 	    
-
 	elif user_commande == "ipconfig":
 	     os.system("ipconfig")
 
@@ -83,7 +79,6 @@ while True:
 	
 	     print("\
 ----++++++++++++++++++++++++++++------\n\
-nom: Modifier le nom du terminal\n\
 help: Afficher la liste des commandes\n\
 quit: Terminer l'éxecution du programme...\n\
 shutdown -s: Arrêter le système :(\n\
